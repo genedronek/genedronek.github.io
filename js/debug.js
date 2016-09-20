@@ -151,36 +151,32 @@ window.Status || (window.Status = function ( ) { });
 //  create simple status line
 function Status(s) {
 	if ( !Status.line ) {
-		//  add status box to html node
+		//  add status-box and Status.line to html node
 		var box = document.documentElement.appendChild(
 					document.createElement('status-box'));
-		box.innerHTML = 
-			"<div id= status-line></div>" +
-			//"<div id= dumb-button onclick=' showDOM( \"#studio-player\", 99); ' >showDOM</div>" +
-			//"<div id= dumb-button onclick=' showDOM( \"#content\", 99); ' >showDOM</div>" +
-			//"<div id= dumb-button onclick=' showDOM( \"body\", 99); ' >showXRAY</div>" +
-			"<style>" +
-				"status-box			{ width: 0; height: 100%; z-index: 1000000; }" +
-				"status-box			{ display: block; position: absolute; }" +
-				//  fix StatusBox to bottom of status-box
-				 "#status-line		{ position:fixed; left:9px; bottom:36px; z-index: 1000; }" +
-				 "#status-line		{ color: green; font: 20px arial; opacity:.8; }" +
-				 "#status-line		{ background: rgba(0,255,0,.2); padding: .2em; }" +
-				 "#status-line		{ height:2em; }" +
-				 "#status-line		{ -webkit-border-radius: 2px; border: 2px solid rgba(0,255,0,.3); }" +
-				 "#dumb-button		{ position: fixed; left: 19px; bottom: 16px; z-index: 1000; }" +
-				 "#dumb-button		{ color: green; font: 20px arial; opacity: .8; }" +
-				 "#dumb-button		{ background: rgba(255,200,0,.1); padding: .2em; }" +
-				 "#dumb-button		{ height:1em; cursor:pointer; }" +
-			"</style>";
+		box.innerHTML = `
 
+			<div id= status-line
+						title="     jsGenie&reg; events monitor" ></div>
+			<style>
+				status-box			{ width: 0; height: 100%; z-index: 1000000; }
+				status-box			{ display: block; position: absolute; }
+				{{  fix StatusBox to bottom of status-box }}
+				 #status-line		{ position:fixed; left:9px; bottom:36px; z-index: 1000; }
+				 #status-line		{ color: green; font: 20px arial; opacity:.8; }
+				 #status-line		{ background: rgba(0,255,0,.2); padding: .2em; }
+				 #status-line		{ height:2em; }
+				 #status-line		{ -webkit-border-radius: 2px; border: 2px solid rgba(0,255,0,.3); }
+				 #dumb-button		{ position: fixed; left: 19px; bottom: 16px; z-index: 1000; }
+				 #dumb-button		{ color: green; font: 20px arial; opacity: .8; }
+				 #dumb-button		{ background: rgba(255,200,0,.1); padding: .2em; }
+				 #dumb-button		{ height:1em; cursor:pointer; }
+			</style>
+		`
 		Status.line = box.querySelector( "#status-line" );
 		console.log( "status create",box, Status.line );
 	}
-	//  set into node 
 	Status.line.innerHTML = s;
-	//if ( s.match( /body|window/igm ) && !s.match( /focus|blur|keyup/igm ) ) alert(s)
-	//console.log("status", s);
 }
 
 //window.addEventListener( "unload", function (e) { alert('unloading') }, true);
