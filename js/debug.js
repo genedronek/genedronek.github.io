@@ -157,7 +157,7 @@ function Status(s) {
 		box.innerHTML = `
 
 			<div id= status-line
-						title="     jsGenie&reg; events monitor" ></div>
+						title="     jsGenie™ events monitor" ></div>
 			<style>
 				status-box			{ width: 0; height: 100%; z-index: 1000000; }
 				status-box			{ display: block; position: absolute; }
